@@ -1,0 +1,250 @@
+body{
+  font-family: 'Dancing Script', cursive, Arial, Helvetica, "Times New Roman";
+  background-color: #02010a;
+  color: #000
+}
+
+.contenido{
+  width: 100%;
+
+}
+
+a:link, a:visited{
+  color: #000;
+  text-decoration: underline;
+}
+
+a:hover, a:visited{
+  color: #000;
+  text-decoration: none;
+}
+
+img {
+	box-shadow: 2px 2px 2px #02010a;
+	max-width: 100%;
+	width: 90%;
+	margin: 5%;
+}
+
+section{
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/*Cabecera*/
+header{
+  background-color: #5b7989;
+  border-radius: 10px 10px 0 0;
+  float: left;
+  width: 100%;
+  animation: slideIn 1s;
+}
+
+header h1 {
+	float: left;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #02010a;
+	margin: 1% 2%;
+	width: 100%;
+	text-align: center;
+}
+
+header nav{
+  float: right;
+  margin: 1% 2%;
+  text-align: center;
+  width: 100%;
+}
+
+nav ul{
+  display: inline-block;
+  list-style: none;
+  margin: 0 auto;
+}
+
+nav ul li{
+  float: left;
+  display: inline;
+  margin: 15px 10px;
+}
+
+#cabecera nav .active a:link, #cabecera nav ul li a:hover, #cabecera nav ul li a:visited, #cabecera nav ul li a:active {
+  color: #ffffff;
+}
+#cabecera nav .active a:link{
+text-decoration: none;
+}
+
+
+/*Section Imagen Central*/
+#imagenCentral{
+  background-color: #82c3a6;
+}
+
+/*Section Imagen Secundaria*/
+#imagenSecundaria, #galeria{
+  display: flex;
+  flex-flow: row wrap;
+  background: #d5c75f;
+  border: 1px solid;
+  padding: 10px 0;
+}
+
+#imagenSecundaria img{
+  margin-bottom: 1%;
+  border: 1px solid;
+}
+div [class^="imgSec"]{
+  flex: 1 2 100%;
+}
+
+figure{
+  text-align: center;
+  margin: 0px;
+  flex: 100%;
+}
+
+.imgSecIzquierda {
+  order: 1;
+  flex-grow: 1;
+}
+.imgSecDerecha {
+  order: 1;
+  flex-grow: 1;
+}
+
+#paisajes{
+  transition: transform 1s, box-shadow 1s;
+  -webkit-transition: transform 1s, box-shadow 1s;
+}
+
+#paisajes:hover{
+  -webkit-transform: rotate(10deg);
+  -webkit-box-shadow: 2px 2px 2px #82c3a6;
+
+  transform: rotate(10deg);
+  box-shadow: 2px 2px 2px #82c3a6;
+
+  border: 2px solid;
+}
+
+#retratos{
+  transition: all 1s;
+  -webkit-transition: all 1s;
+}
+#retratos:hover{
+  -webkit-transform: translate(20px, -5px);
+  -webkit-box-shadow: 2px 2px 2px #82c3a6;
+
+  transform: translate(20px, -5px);
+  box-shadow: 2px 2px 2px #82c3a6;
+
+  border: 2px solid;
+}
+
+@-webkit-keyframes slideIn{
+  0%{
+    position: relative;
+    margin-top: 150%;
+  }
+  60%{
+    margin-top:-5%;
+  }
+  100%{
+    margin-top:0%
+  }
+}
+
+/*Seccion Paisajes / Retratos*/
+
+#galeria figure:first-child{
+  filter:blur(10px);
+}
+
+#galeria figure:nth-child(even){
+  filter:grayscale(100%);
+}
+
+#galeria figure:nth-child(3){
+  filter:sepia(90%);
+}
+
+/*Footer*/
+footer{
+  float: left;
+  width: calc(100% - 40px);
+  border-radius: 0 0 10px 10px;
+  background-color: #C6d5c5;
+  display: flex;
+  flex-flow: row wrap;
+  padding:20px;
+}
+
+footer img{
+  border-radius: 50px;
+  width: 20px;
+  display: inline-block;
+  margin: 0 5px;
+  box-shadow: none;
+}
+
+div [class^="footer-info"]{
+  flex: 1 4 100%;
+}
+
+.footer-info1 {
+  order: 1;
+  flex-grow: 1;
+}
+.footer-info2 {
+  order: 1;
+  flex-grow: 1;
+}
+.footer-info3 {
+  order: 1;
+  flex-grow: 1;
+}
+.footer-info4 {
+  order: 1;
+  flex-grow: 1;
+}
+
+
+/*Media Query Desktop*/
+@media (min-width:900px){
+  .contenido{
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  header h1 {
+  	width: auto;
+  	text-align: left;
+  }
+
+  header nav{
+    float: right;
+    text-align: right;
+    width: auto;
+  }
+
+  div [class*="imgSec"]{
+    flex: 1 2 50%;
+  }
+
+  .galeria{
+    flex: 1 2 33.33%;
+  }
+
+  div [class^="footer-info"]{
+    flex: 1 4 25%;
+  }
+
+  figure{
+    text-align: center;
+    margin: 0px;
+    flex: 33.33%
+  }
+
+}
